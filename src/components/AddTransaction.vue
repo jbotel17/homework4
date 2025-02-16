@@ -4,16 +4,16 @@
     const amount = ref('')
 
     const emit = defineEmits([
-        'transctionsSubmitted'
+        'transactionSubmitted'
     ])
 
     const onSubmit =() =>{
-        const transactionsData = {
+        const transactionData = {
             text: text.value,
             amount: parseFloat(amount.value),
         }
 
-        emit('transctionsSubmitted', transactionsData)
+        emit('transactionSubmitted', transactionData)
 
         text.value = ''
         amount.value = ''
@@ -31,7 +31,7 @@
         </div>
         <div class="form-control">
             <label for="amount">Enter Transaction Amount</label>
-            <input type="text" id="amount" v-model="text" placeholder="Enter Negative Value for Expenses...">
+            <input type="text" id="amount" v-model="amount" placeholder="Enter Negative Value for Expenses...">
         </div>
         <button class="btn">Add Transaction</button>
     
